@@ -1,0 +1,43 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Sorting Game</title>
+    <link rel="stylesheet" href="sgame.css">
+</head>
+<body>
+
+    <h1>Waste Sorting Game</h1>
+    <div id="board">
+
+
+
+        <button class="btn" id="play">Play</button>
+        <script>
+            let playButton = document.getElementById("play");
+        
+            function playMusic() {
+                let audio = new Audio("sgame.mp3");
+        
+                // Add an event listener for when the audio finishes playing
+                audio.addEventListener("ended", () => {
+                    window.location.href = "rg.html";
+                });
+        
+                // Start playing the audio
+                audio.play().catch(error => {
+                    console.error("Error playing audio:", error);
+                    // Fallback: navigate to game.html even if audio fails to play
+                    window.location.href = "game.html";
+                });
+            }
+        
+            playButton.addEventListener("click", playMusic);
+        </script>
+        
+        
+
+
+
+</body>
+</html>
